@@ -96,8 +96,22 @@ footer{background:#3f0f1b;color:var(--blu);padding:30px 0;font-size:15px;text-al
 .hero .hg>.ph{animation:hero-art .8s .12s both}
 @keyframes hero-copy{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 @keyframes hero-art{from{opacity:0;transform:translateY(12px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+.saree-curtain{position:fixed;inset:0;z-index:100;display:grid;grid-template-columns:1fr 1fr;pointer-events:auto;overflow:hidden;background:var(--mar);animation:curtain-away .01s 1.65s forwards}
+.curtain-panel{position:relative;overflow:hidden;background:linear-gradient(100deg,#48111e 0%,#641c2b 20%,#8a3546 48%,#641c2b 73%,#48111e 100%);box-shadow:inset 0 0 42px rgba(30,5,12,.38);will-change:transform}
+.curtain-panel::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 7%,rgba(255,235,203,.055) 8%,transparent 10% 16%),linear-gradient(90deg,rgba(255,255,255,.12),transparent 16%,rgba(35,4,14,.17) 31%,transparent 48%,rgba(255,255,255,.08) 66%,transparent 82%,rgba(35,4,14,.24));}
+.curtain-panel::after{content:"";position:absolute;inset:0 8px;border-inline:1px solid rgba(197,161,91,.7);opacity:.8}
+.curtain-panel.left{transform-origin:left center;animation:curtain-left 1.35s cubic-bezier(.76,0,.24,1) .28s both}
+.curtain-panel.right{transform-origin:right center;animation:curtain-right 1.35s cubic-bezier(.76,0,.24,1) .28s both}
+.curtain-center{position:absolute;z-index:1;left:50%;top:50%;transform:translate(-50%,-50%);display:grid;justify-items:center;gap:12px;width:min(72vw,300px);color:var(--ivo);text-align:center;animation:curtain-mark .45s ease-out both}
+.curtain-center svg{width:68px;height:68px;filter:drop-shadow(0 2px 8px rgba(0,0,0,.25))}
+.curtain-center span{font:600 clamp(21px,4vw,32px)/1.05 "Cormorant Garamond",Georgia,serif;text-shadow:0 2px 10px rgba(0,0,0,.35)}
+@keyframes curtain-left{to{transform:translateX(-102%)}}
+@keyframes curtain-right{to{transform:translateX(102%)}}
+@keyframes curtain-away{to{visibility:hidden;pointer-events:none}}
+@keyframes curtain-mark{from{opacity:0;transform:translate(-50%,-46%)}to{opacity:1;transform:translate(-50%,-50%)}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}.saree-curtain{display:none}.reveal{opacity:1;transform:none}}
 </style></head><body>
+<div class="saree-curtain" aria-hidden="true"><div class="curtain-panel left"></div><div class="curtain-panel right"></div><div class="curtain-center"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="19" fill="#FFF8EF" stroke="#C5A15B"/><g fill="#641C2B"><path d="M20 8c3 4 3 9 0 13-3-4-3-9 0-13z"/><path d="M20 21c-1-5-6-8-11-7 1 5 5 8 11 7z" opacity=".85"/><path d="M20 21c1-5 6-8 11-7-1 5-5 8-11 7z" opacity=".85"/></g><path d="M9 28q11 6 22 0" stroke="#C5A15B" fill="none" stroke-width="1.5"/></svg><span>Maa Ambey Vastralaya</span></div></div>
 <header><div class="wrap hd">
 <a class="brand" href="#home" aria-label="Maa Ambey Vastralaya home">
 <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#FFF8EF" stroke="#C5A15B"/><g fill="#641C2B"><path d="M20 8c3 4 3 9 0 13-3-4-3-9 0-13z"/><path d="M20 21c-1-5-6-8-11-7 1 5 5 8 11 7z" opacity=".85"/><path d="M20 21c1-5 6-8 11-7-1 5-5 8-11 7z" opacity=".85"/></g><path d="M9 28q11 6 22 0" stroke="#C5A15B" fill="none" stroke-width="1.5"/></svg>
