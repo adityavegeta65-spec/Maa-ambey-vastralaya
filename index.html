@@ -127,9 +127,9 @@ footer{background:#3f0f1b;color:var(--blu);padding:30px 0;font-size:15px;text-al
 .curtain-panel::after{content:"";position:absolute;inset:0 8px;border-inline:1px solid rgba(197,161,91,.7);opacity:.8}
 .curtain-panel.left{transform-origin:left center;animation:curtain-left 1.7s cubic-bezier(.76,0,.24,1) .25s both}
 .curtain-panel.right{transform-origin:right center;animation:curtain-right 1.7s cubic-bezier(.76,0,.24,1) .25s both}
-.curtain-title{position:absolute;z-index:1;top:42%;left:50%;width:100%;transform:translate(-50%,-50%);color:var(--ivo);font:700 clamp(48px,12vw,148px)/.82 "Cormorant Garamond",Georgia,serif;letter-spacing:.04em;text-align:center;text-shadow:0 8px 35px rgba(31,5,13,.28);white-space:nowrap;animation:title-arrive .75s .12s both}
-.curtain-title span{display:block;color:#e3c990;font-size:.35em;line-height:1.5;font-family:Mukta,sans-serif;font-weight:500;letter-spacing:.34em;margin-top:17px}
-.intro-drape{position:absolute;z-index:2;left:50%;top:47%;width:min(46vw,390px);height:min(70vh,570px);transform-origin:50% 45%;filter:drop-shadow(0 24px 30px rgba(29,4,12,.38));animation:intro-drape .95s cubic-bezier(.18,.75,.25,1) .28s both}
+.curtain-title{position:absolute;z-index:2;top:24%;left:50%;width:100%;transform:translate(-50%,-50%);color:var(--ivo);font:700 clamp(48px,10vw,128px)/.88 "Cormorant Garamond",Georgia,serif;letter-spacing:.04em;text-align:center;text-shadow:0 8px 35px rgba(31,5,13,.28);white-space:nowrap;animation:title-arrive .75s .12s both}
+.curtain-title span{display:block;color:#e3c990;font-size:.31em;line-height:1.45;font-family:Mukta,sans-serif;font-weight:500;letter-spacing:.3em;margin-top:12px}
+.intro-drape{position:absolute;z-index:1;left:50%;top:40%;width:min(38vw,340px);height:min(46vh,390px);transform-origin:50% 45%;filter:drop-shadow(0 24px 30px rgba(29,4,12,.38));animation:intro-drape .95s cubic-bezier(.18,.75,.25,1) .28s both}
 .intro-drape svg{width:100%;height:100%;overflow:visible}
 .intro-drape .cloth{fill:url(#intro-silk)}
 .intro-drape .pleat{fill:none;stroke:#f7dfad;stroke-width:3;opacity:.52}
@@ -142,8 +142,8 @@ footer{background:#3f0f1b;color:var(--blu);padding:30px 0;font-size:15px;text-al
 @keyframes curtain-away{to{visibility:hidden;pointer-events:none}}
 @keyframes curtain-mark{from{opacity:0;transform:translate(-50%,8px)}to{opacity:1;transform:translate(-50%,0)}}
 @keyframes title-arrive{from{opacity:0;transform:translate(-50%,-44%) scale(.94);letter-spacing:.12em}to{opacity:1;transform:translate(-50%,-50%) scale(1);letter-spacing:.04em}}
-@keyframes intro-drape{0%{opacity:0;transform:translate(-50%,-43%) perspective(900px) rotateY(-34deg) rotateZ(8deg) scale(.72)}58%{opacity:1;transform:translate(-50%,-52%) perspective(900px) rotateY(18deg) rotateZ(-8deg) scale(1.04)}100%{opacity:1;transform:translate(-50%,-50%) perspective(900px) rotateY(-9deg) rotateZ(-3deg) scale(1)}}
-@media(max-width:600px){.curtain-title{top:40%;font-size:clamp(43px,13vw,78px)}.curtain-title span{font-size:.29em;letter-spacing:.25em}.intro-drape{top:47%;width:min(72vw,330px);height:min(58vh,470px)}.curtain-center{bottom:9%}}
+@keyframes intro-drape{0%{opacity:0;transform:translate(-50%,16px) perspective(900px) rotateY(-34deg) rotateZ(8deg) scale(.72)}58%{opacity:1;transform:translate(-50%,-7px) perspective(900px) rotateY(18deg) rotateZ(-8deg) scale(1.04)}100%{opacity:1;transform:translate(-50%,0) perspective(900px) rotateY(-9deg) rotateZ(-3deg) scale(1)}}
+@media(max-width:600px){.curtain-title{top:23%;font-size:clamp(40px,12vw,72px)}.curtain-title span{font-size:.27em;letter-spacing:.2em}.intro-drape{top:39%;width:min(68vw,300px);height:min(44vh,360px)}.curtain-center{bottom:8%}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}.saree-curtain{display:none}.reveal{opacity:1;transform:none}}
 </style></head><body>
 <a class="skip" href="#home">Skip to content</a>
