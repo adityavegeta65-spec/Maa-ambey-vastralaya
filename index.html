@@ -39,9 +39,17 @@ nav{display:flex;gap:22px;align-items:center}
 nav a{text-decoration:none;font-weight:500}nav a:hover{color:var(--wine)}
 #mb{display:none;background:none;border:1.5px solid var(--mar);color:var(--mar);border-radius:10px;width:44px;height:44px;font-size:22px}
 @media(max-width:860px){#mb{display:block}nav{display:none;position:absolute;top:72px;left:0;right:0;background:var(--ivo);flex-direction:column;align-items:flex-start;padding:16px 20px 22px;border-bottom:1px solid var(--gold)}nav.open{display:flex}.hdw{display:none}.brand small{display:none}}
-.hero{background:radial-gradient(ellipse at 78% 22%,rgba(197,161,91,.22),transparent 34%),linear-gradient(180deg,var(--blu),var(--ivo) 92%);padding:56px 0 64px}
+.hero{position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at 78% 22%,rgba(197,161,91,.22),transparent 34%),linear-gradient(180deg,var(--blu),var(--ivo) 92%);padding:56px 0 64px}
+.saree-wave{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden;opacity:.15}
+.saree-wave svg{position:absolute;left:43%;top:3%;width:clamp(260px,42vw,580px);height:94%;overflow:visible;transform-origin:48% 50%;animation:saree-drape 8s ease-in-out infinite;will-change:transform}
+.saree-wave .cloth{fill:url(#saree-sheen)}
+.saree-wave .fold{fill:none;stroke:#fff3d6;stroke-width:3;opacity:.3}
+.saree-wave .border{fill:none;stroke:#C5A15B;stroke-width:7;opacity:.85}
+@keyframes saree-drape{0%,100%{transform:perspective(1100px) rotateY(-16deg) rotateX(3deg) rotateZ(-2deg) translate3d(0,0,0)}50%{transform:perspective(1100px) rotateY(13deg) rotateX(-2deg) rotateZ(1deg) translate3d(8px,-5px,14px)}}
+.hero>.wrap{position:relative;z-index:1}
 .hg{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
 @media(max-width:860px){.hg{grid-template-columns:1fr}}
+@media(max-width:860px){.saree-wave{opacity:.11}.saree-wave svg{left:25%;width:70%;height:62%;top:1%}}
 .hero h1{font-size:clamp(38px,6.4vw,70px);font-weight:700}
 .hero p{font-size:19px;max-width:48ch;margin:18px 0}
 .price{display:inline-block;border:1px solid var(--gold);padding:6px 16px;border-radius:999px;color:var(--wine);font-weight:600;background:rgba(255,248,239,.84);margin-bottom:22px;letter-spacing:.02em}
@@ -139,7 +147,7 @@ footer{background:#3f0f1b;color:var(--blu);padding:30px 0;font-size:15px;text-al
 </div></header>
 
 <main id="home">
-<section class="hero"><div class="wrap hg">
+<section class="hero"><div class="saree-wave" aria-hidden="true"><svg viewBox="0 0 480 700" preserveAspectRatio="none"><defs><linearGradient id="saree-sheen" x1="0" y1="0" x2="1" y2=".15"><stop offset="0" stop-color="#641C2B"/><stop offset=".24" stop-color="#8B3447"/><stop offset=".48" stop-color="#641C2B"/><stop offset=".72" stop-color="#9A4B53"/><stop offset="1" stop-color="#641C2B"/></linearGradient></defs><path class="cloth" d="M28 34C133 4 234 84 452 22L429 652C291 573 181 722 24 640Z"/><path class="fold" d="M78 27C156 166 74 285 153 385S119 564 91 670M178 50C245 176 172 270 244 383S208 564 184 687M295 44C347 184 276 270 341 377S303 550 285 643M414 34C365 171 438 277 372 401S406 543 391 630"/><path class="border" d="M28 34C133 4 234 84 452 22M24 640C181 722 291 573 429 652"/></svg></div><div class="wrap hg">
 <div>
 <div class="price">A considered edit of Indian occasionwear</div>
 <h1>Wear the moments you want to remember.</h1>
