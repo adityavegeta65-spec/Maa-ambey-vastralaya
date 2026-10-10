@@ -1,0 +1,23 @@
+{
+  "systemSetup": [],
+  "templateName": "custom",
+  "projectDependencies": [],
+  "codeChecks": [],
+  "buildSteps": [],
+  "runStep": [
+    {
+      "name": "Run Static Site",
+      "command": "node -e \"require('http').createServer((req,res)=>{const fs=require('fs'),path=require('path');let file=path.join(process.cwd(),decodeURIComponent(req.url.split('?')[0]));if(file.endsWith('/'))file+='index.html';fs.readFile(file,(err,data)=>{if(err){res.statusCode=404;res.end('Not found');return}res.end(data)})}).listen(4000,'0.0.0.0')\"",
+      "port": "4000"
+    }
+  ],
+  "deploySteps": [],
+  "cleanupFiles": [],
+  "packageManager": "npm",
+  "envPaths": [
+    {
+      "name": "default",
+      "path": ".env"
+    }
+  ]
+}
