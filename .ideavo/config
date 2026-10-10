@@ -7,7 +7,7 @@
   "runStep": [
     {
       "name": "Run Static Site",
-      "command": "node -e \"require('http').createServer((req,res)=>{const fs=require('fs'),path=require('path');let file=path.join(process.cwd(),decodeURIComponent(req.url.split('?')[0]));if(file.endsWith('/'))file+='index.html';fs.readFile(file,(err,data)=>{if(err){res.statusCode=404;res.end('Not found');return}res.end(data)})}).listen(4000,'0.0.0.0')\"",
+      "command": "node -e \"require('http').createServer((req,res)=>{const p=new URL(req.url,'http://preview').pathname;if(p!=='/'&&p!=='/index.html'){res.writeHead(404);res.end('Not found');return}require('fs').readFile('index.html',(err,data)=>{if(err){res.writeHead(500);res.end('Server error');return}res.writeHead(200,{'Content-Type':'text/html; charset=utf-8','X-Content-Type-Options':'nosniff'});res.end(data)})}).listen(4000,'0.0.0.0')\"",
       "port": "4000"
     }
   ],
