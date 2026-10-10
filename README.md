@@ -2,5 +2,13 @@
 
 Single-page website. Open index.html in a browser, or upload to Vercel / GitHub Pages / Netlify.
 
-To add real photos: in index.html, add an image path or URL as the 3rd item of rows in the C (categories) and S (products) arrays.
+## Cloudflare Pages
+
+- Build command: `npm run build`
+- Build output directory: `dist`
+- Root directory: `/`
+
+The build copies the standalone page into `dist/`; there are no runtime dependencies.
+
+To add real photos, update the image URL in the 3rd item of each C (category) row in index.html. Product cards currently reuse those category reference images; replace the product-to-category mapping when actual product photos are available.
 WhatsApp number is set in the N constant.

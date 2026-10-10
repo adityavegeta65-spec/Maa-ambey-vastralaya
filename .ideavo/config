@@ -1,9 +1,19 @@
 {
   "systemSetup": [],
   "templateName": "custom",
-  "projectDependencies": [],
+  "projectDependencies": [
+    {
+      "name": "Install Dependencies",
+      "command": "npm install"
+    }
+  ],
   "codeChecks": [],
-  "buildSteps": [],
+  "buildSteps": [
+    {
+      "name": "Build Static Site",
+      "command": "npm run build"
+    }
+  ],
   "runStep": [
     {
       "name": "Run Static Site",
@@ -12,7 +22,10 @@
     }
   ],
   "deploySteps": [],
-  "cleanupFiles": [],
+  "cleanupFiles": [
+    "dist",
+    "node_modules"
+  ],
   "packageManager": "npm",
   "envPaths": [
     {

@@ -1,2 +1,4 @@
 .ideavo/project
 *.log
+node_modules/
+dist/
