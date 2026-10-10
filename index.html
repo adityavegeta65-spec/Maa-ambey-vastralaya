@@ -121,23 +121,33 @@ footer{background:#3f0f1b;color:var(--blu);padding:30px 0;font-size:15px;text-al
 .hero .hg>.ph{animation:hero-art .8s .12s both}
 @keyframes hero-copy{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 @keyframes hero-art{from{opacity:0;transform:translateY(12px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
-.saree-curtain{position:fixed;inset:0;z-index:100;display:grid;grid-template-columns:1fr 1fr;pointer-events:auto;overflow:hidden;background:var(--mar);animation:curtain-away .01s 1.65s forwards}
+.saree-curtain{position:fixed;inset:0;z-index:100;display:grid;grid-template-columns:1fr 1fr;pointer-events:auto;overflow:hidden;background:radial-gradient(ellipse at 50% 45%,#8b3447 0%,#641c2b 48%,#310b17 100%);animation:curtain-away .01s 2.15s forwards}
 .curtain-panel{position:relative;overflow:hidden;background:linear-gradient(100deg,#48111e 0%,#641c2b 20%,#8a3546 48%,#641c2b 73%,#48111e 100%);box-shadow:inset 0 0 42px rgba(30,5,12,.38);will-change:transform}
 .curtain-panel::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 7%,rgba(255,235,203,.055) 8%,transparent 10% 16%),linear-gradient(90deg,rgba(255,255,255,.12),transparent 16%,rgba(35,4,14,.17) 31%,transparent 48%,rgba(255,255,255,.08) 66%,transparent 82%,rgba(35,4,14,.24));}
 .curtain-panel::after{content:"";position:absolute;inset:0 8px;border-inline:1px solid rgba(197,161,91,.7);opacity:.8}
-.curtain-panel.left{transform-origin:left center;animation:curtain-left 1.35s cubic-bezier(.76,0,.24,1) .28s both}
-.curtain-panel.right{transform-origin:right center;animation:curtain-right 1.35s cubic-bezier(.76,0,.24,1) .28s both}
-.curtain-center{position:absolute;z-index:1;left:50%;top:50%;transform:translate(-50%,-50%);display:grid;justify-items:center;gap:12px;width:min(72vw,300px);color:var(--ivo);text-align:center;animation:curtain-mark .45s ease-out both}
-.curtain-center svg{width:68px;height:68px;filter:drop-shadow(0 2px 8px rgba(0,0,0,.25))}
-.curtain-center span{font:600 clamp(21px,4vw,32px)/1.05 "Cormorant Garamond",Georgia,serif;text-shadow:0 2px 10px rgba(0,0,0,.35)}
+.curtain-panel.left{transform-origin:left center;animation:curtain-left 1.7s cubic-bezier(.76,0,.24,1) .25s both}
+.curtain-panel.right{transform-origin:right center;animation:curtain-right 1.7s cubic-bezier(.76,0,.24,1) .25s both}
+.curtain-title{position:absolute;z-index:1;top:42%;left:50%;width:100%;transform:translate(-50%,-50%);color:var(--ivo);font:700 clamp(48px,12vw,148px)/.82 "Cormorant Garamond",Georgia,serif;letter-spacing:.04em;text-align:center;text-shadow:0 8px 35px rgba(31,5,13,.28);white-space:nowrap;animation:title-arrive .75s .12s both}
+.curtain-title span{display:block;color:#e3c990;font-size:.35em;line-height:1.5;font-family:Mukta,sans-serif;font-weight:500;letter-spacing:.34em;margin-top:17px}
+.intro-drape{position:absolute;z-index:2;left:50%;top:47%;width:min(46vw,390px);height:min(70vh,570px);transform-origin:50% 45%;filter:drop-shadow(0 24px 30px rgba(29,4,12,.38));animation:intro-drape .95s cubic-bezier(.18,.75,.25,1) .28s both}
+.intro-drape svg{width:100%;height:100%;overflow:visible}
+.intro-drape .cloth{fill:url(#intro-silk)}
+.intro-drape .pleat{fill:none;stroke:#f7dfad;stroke-width:3;opacity:.52}
+.intro-drape .zari{fill:none;stroke:#d8b875;stroke-width:8;stroke-linecap:round;opacity:.96}
+.curtain-center{position:absolute;z-index:3;left:50%;top:auto;bottom:7%;transform:translateX(-50%);display:flex;align-items:center;gap:13px;width:max-content;max-width:90vw;color:var(--ivo);text-align:left;animation:curtain-mark .5s .35s both}
+.curtain-center svg{width:48px;height:48px;filter:drop-shadow(0 2px 8px rgba(0,0,0,.25))}
+.curtain-center span{font:600 17px/1.05 "Cormorant Garamond",Georgia,serif;letter-spacing:.14em;text-shadow:0 2px 10px rgba(0,0,0,.35)}
 @keyframes curtain-left{to{transform:translateX(-102%)}}
 @keyframes curtain-right{to{transform:translateX(102%)}}
 @keyframes curtain-away{to{visibility:hidden;pointer-events:none}}
-@keyframes curtain-mark{from{opacity:0;transform:translate(-50%,-46%)}to{opacity:1;transform:translate(-50%,-50%)}}
+@keyframes curtain-mark{from{opacity:0;transform:translate(-50%,8px)}to{opacity:1;transform:translate(-50%,0)}}
+@keyframes title-arrive{from{opacity:0;transform:translate(-50%,-44%) scale(.94);letter-spacing:.12em}to{opacity:1;transform:translate(-50%,-50%) scale(1);letter-spacing:.04em}}
+@keyframes intro-drape{0%{opacity:0;transform:translate(-50%,-43%) perspective(900px) rotateY(-34deg) rotateZ(8deg) scale(.72)}58%{opacity:1;transform:translate(-50%,-52%) perspective(900px) rotateY(18deg) rotateZ(-8deg) scale(1.04)}100%{opacity:1;transform:translate(-50%,-50%) perspective(900px) rotateY(-9deg) rotateZ(-3deg) scale(1)}}
+@media(max-width:600px){.curtain-title{top:40%;font-size:clamp(43px,13vw,78px)}.curtain-title span{font-size:.29em;letter-spacing:.25em}.intro-drape{top:47%;width:min(72vw,330px);height:min(58vh,470px)}.curtain-center{bottom:9%}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}.saree-curtain{display:none}.reveal{opacity:1;transform:none}}
 </style></head><body>
 <a class="skip" href="#home">Skip to content</a>
-<div class="saree-curtain" aria-hidden="true"><div class="curtain-panel left"></div><div class="curtain-panel right"></div><div class="curtain-center"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="19" fill="#FFF8EF" stroke="#C5A15B"/><g fill="#641C2B"><path d="M20 8c3 4 3 9 0 13-3-4-3-9 0-13z"/><path d="M20 21c-1-5-6-8-11-7 1 5 5 8 11 7z" opacity=".85"/><path d="M20 21c1-5 6-8 11-7-1 5-5 8-11 7z" opacity=".85"/></g><path d="M9 28q11 6 22 0" stroke="#C5A15B" fill="none" stroke-width="1.5"/></svg><span>Maa Ambey Vastralaya</span></div></div>
+<div class="saree-curtain" aria-hidden="true"><div class="curtain-panel left"></div><div class="curtain-panel right"></div><div class="curtain-title">MAA AMBEY<span>THE ART OF EVERYDAY ELEGANCE</span></div><div class="intro-drape"><svg viewBox="0 0 360 520" preserveAspectRatio="none"><defs><linearGradient id="intro-silk" x1="0" y1="0" x2="1" y2=".2"><stop offset="0" stop-color="#4b1020"/><stop offset=".22" stop-color="#9a4050"/><stop offset=".42" stop-color="#641c2b"/><stop offset=".62" stop-color="#b45c61"/><stop offset=".81" stop-color="#702238"/><stop offset="1" stop-color="#3c0d1a"/></linearGradient></defs><path class="cloth" d="M40 44C117 4 214 78 321 30C296 130 250 189 302 274C357 365 276 447 331 496C247 478 188 444 119 493C146 396 81 339 138 259C205 164 39 147 40 44Z"/><path class="pleat" d="M68 38C116 153 201 176 152 264S186 399 146 485M112 31C157 137 242 168 191 272S233 401 184 466M170 57C205 146 278 190 231 279S276 393 228 461M276 45C234 153 285 210 264 277S323 389 290 475"/><path class="zari" d="M40 44C117 4 214 78 321 30M119 493C188 444 247 478 331 496"/></svg></div><div class="curtain-center"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="19" fill="#FFF8EF" stroke="#C5A15B"/><g fill="#641C2B"><path d="M20 8c3 4 3 9 0 13-3-4-3-9 0-13z"/><path d="M20 21c-1-5-6-8-11-7 1 5 5 8 11 7z" opacity=".85"/><path d="M20 21c1-5 6-8 11-7-1 5-5 8-11 7z" opacity=".85"/></g><path d="M9 28q11 6 22 0" stroke="#C5A15B" fill="none" stroke-width="1.5"/></svg><span>VASTRALAYA · INDIAN ETHNIC WEAR</span></div></div>
 <header><div class="wrap hd">
 <a class="brand" href="#home" aria-label="Maa Ambey Vastralaya home">
 <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#FFF8EF" stroke="#C5A15B"/><g fill="#641C2B"><path d="M20 8c3 4 3 9 0 13-3-4-3-9 0-13z"/><path d="M20 21c-1-5-6-8-11-7 1 5 5 8 11 7z" opacity=".85"/><path d="M20 21c1-5 6-8 11-7-1 5-5 8-11 7z" opacity=".85"/></g><path d="M9 28q11 6 22 0" stroke="#C5A15B" fill="none" stroke-width="1.5"/></svg>
