@@ -12,7 +12,7 @@ The build copies the standalone page into `dist/`; there are no runtime dependen
 
 ## Cloudflare Workers
 
-The Wrangler config serves the root directory, while `.assetsignore` allows only `index.html` into the upload. This keeps build tools and `node_modules` out and works even when the deploy command runs before a build step. Deploy with `wrangler deploy`.
+The Wrangler config serves only the tracked `worker-assets/` folder, so Wrangler never scans or uploads `node_modules`. It contains the page at checkout, so deploy works even before a build step; `npm run build` also syncs it from `index.html`. Deploy with `wrangler deploy`.
 
 To add real photos, update the image URL in the 3rd item of each C (category) row in index.html. Product cards currently reuse those category reference images; replace the product-to-category mapping when actual product photos are available.
 WhatsApp number is set in the N constant.
